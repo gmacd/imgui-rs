@@ -5,7 +5,7 @@ use crate::render::renderer::TextureId;
 use crate::sys;
 
 #[cfg(feature = "zerocopy")]
-use zerocopy::AsBytes;
+use zerocopy::{AsBytes, FromBytes};
 
 /// All draw data required to render a frame.
 #[repr(C)]
@@ -215,7 +215,7 @@ pub enum DrawCmd {
 /// A single vertex
 #[repr(C)]
 #[derive(Copy, Clone, Debug, PartialEq)]
-#[cfg_attr(feature = "zerocopy", derive(FromBytes))]
+#[cfg_attr(feature = "zerocopy", derive(AsBytes, FromBytes))]
 pub struct DrawVert {
     pub pos: [f32; 2],
     pub uv: [f32; 2],
