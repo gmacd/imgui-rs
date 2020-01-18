@@ -212,6 +212,7 @@ pub enum DrawCmd {
 /// A single vertex
 #[repr(C)]
 #[derive(Copy, Clone, Debug, PartialEq)]
+#[cfg_attr(feature = "zerocopy", derive(FromBytes))]
 pub struct DrawVert {
     pub pos: [f32; 2],
     pub uv: [f32; 2],
