@@ -4,6 +4,9 @@ use crate::internal::{RawCast, RawWrapper};
 use crate::render::renderer::TextureId;
 use crate::sys;
 
+#[cfg(feature = "zerocopy")]
+use zerocopy::AsBytes;
+
 /// All draw data required to render a frame.
 #[repr(C)]
 pub struct DrawData {
