@@ -14,9 +14,6 @@ exclude = [
     "/resources"
 ]
 
-#[features]
-#zerocopy = ["zerocopy"]
-
 [dependencies]
 bitflags = "1.2.1"
 glium = { version = "0.25", default-features = false, optional = true }
